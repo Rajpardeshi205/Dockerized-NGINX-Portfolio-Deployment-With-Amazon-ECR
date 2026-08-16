@@ -21,7 +21,7 @@ In this project, I:
 
 # Architecture
 
-![ChatGPT Image Aug 6, 2026, 10_38_18 PM.png](ChatGPT_Image_Aug_6_2026_10_38_18_PM.png)
+![ChatGPT Image Aug 6, 2026, 10_38_18 PM.png](https://github.com/user-attachments/assets/e2439d6e-9bb0-422d-923b-292a0005c999)
 
 # Implementation Step
 
@@ -52,7 +52,7 @@ sudo gpasswd -a ec2-user docker
 cd /var/lib/
 ```
 
-![image.png](image.png)
+![image.png](https://github.com/user-attachments/assets/3e9517a3-e00b-418c-86de-06e5860b0149)
 
 ```jsx
 sudo chmod 770 docker/
@@ -60,7 +60,7 @@ sudo chgrp -R docker docker
 cd docker/
 ```
 
-![image.png](image%201.png)
+![image.png](https://github.com/user-attachments/assets/a093d15c-b6cb-4411-8749-375abb95143f)
 
 ## 5. Create Portfolio Folder In Home Directory
 
@@ -68,7 +68,7 @@ cd docker/
 mkdir Portfolio
 ```
 
-![image.png](image%202.png)
+![image.png](https://github.com/user-attachments/assets/ec386e66-6f6f-48b6-928d-baf94e8373e5)
 
 ## 6. Create IAM User
 
@@ -93,7 +93,7 @@ Gb1LQsa****************************8
 aws configure
 ```
 
-![image.png](image%203.png)
+![image.png](https://github.com/user-attachments/assets/b860583e-c5ac-4a0e-a386-95fd0f109f99)
 
 ## 8. Create Docker File
 
@@ -111,7 +111,7 @@ EXPOSE 80
 CMD ["nginx","-g","daemon off;"]
 ```
 
-![image.png](image%204.png)
+![image.png](https://github.com/user-attachments/assets/fc7304b2-a592-43b1-81b7-f0868de24b76)
 
 ## 9. Build Docker Image
 
@@ -120,19 +120,19 @@ CMD ["nginx","-g","daemon off;"]
  docker images
 ```
 
-![image.png](image%205.png)
+![image.png](https://github.com/user-attachments/assets/35167ec8-9417-444f-85ec-77f0df8c18c2)
 
 ## 10. Go To Amazon ERC
 
 Create New Repo
 
-![image.png](image%206.png)
+![image.png](https://github.com/user-attachments/assets/dcff1167-429d-40d6-a0da-9a6fa53c4e65)
 
 Name : `raj/my-port`
 
-![image.png](image%207.png)
+![image.png](https://github.com/user-attachments/assets/90a5c2ed-c1d9-4632-a204-f973e4e54a3b)
 
-![image.png](image%208.png)
+![image.png](https://github.com/user-attachments/assets/087e7a0e-ebfe-4c72-9fcc-393239fc5e6b)
 
 Copy & Use Commands
 
@@ -140,21 +140,21 @@ Copy & Use Commands
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 594650680682.dkr.ecr.us-east-1.amazonaws.com
 ```
 
-![image.png](image%209.png)
+![image.png](https://github.com/user-attachments/assets/c2b41f51-32fa-454a-9c93-b8600c95fb4f)
 
 ```jsx
 docker tag raj/my-port:latest 594650680682.dkr.ecr.us-east-1.amazonaws.com/raj/my-port:latest
 ```
 
-![image.png](image%2010.png)
+![image.png](https://github.com/user-attachments/assets/ed1dac7d-926e-4251-9e9e-e5addcafea5b)
 
 ```jsx
 docker push 594650680682.dkr.ecr.us-east-1.amazonaws.com/raj/my-port:latest
 ```
 
-![image.png](image%2011.png)
+![image.png](https://github.com/user-attachments/assets/c583d042-1d35-4cf7-9762-c6cdacbbee8a)
 
-![image.png](image%2012.png)
+![image.png](https://github.com/user-attachments/assets/3baae303-b997-409e-a3dc-7f39f423910a)
 
 ## 11. Create Named Volume
 
@@ -163,7 +163,7 @@ docker volume create my-vol
 docker volume ls
 ```
 
-![image.png](image%2013.png)
+![image.png]([image%2013.png](https://github.com/user-attachments/assets/3c28e5f4-09e8-4d33-b549-a5d7dff53661))
 
 ## 12. Attached To Container Using Bind Mount & Volume
 
@@ -171,7 +171,7 @@ docker volume ls
 docker run -d -p 80:80 -v ~/Portfolio:/usr/share/nginx/html -v my-vol:/var/log/nginx --name my-port my-port
 ```
 
-![image.png](image%2014.png)
+![image.png](https://github.com/user-attachments/assets/7cf13ec9-eef6-4d10-aec9-76d0001c6864)
 
 ## 13. Go Inside Container
 
@@ -179,7 +179,7 @@ docker run -d -p 80:80 -v ~/Portfolio:/usr/share/nginx/html -v my-vol:/var/log/n
 docker exec -it my-port sh
 ```
 
-![image.png](image%2015.png)
+![image.png](https://github.com/user-attachments/assets/5ee286c7-a25c-4426-8983-7edda3b0350b)
 
 ## 14. Configure Nginx
 
@@ -211,7 +211,7 @@ server {
 }
 ```
 
-![image.png](image%2016.png)
+![image.png](https://github.com/user-attachments/assets/6923d0d9-cc2c-4cae-8777-791fd2fe2421)
 
 ## 15. Check On Browser
 
@@ -227,7 +227,7 @@ Copy Public IP
 54.87.169.40
 ```
 
-![image.png](image%2017.png)
+![image.png](https://github.com/user-attachments/assets/cb3d426c-77a7-477e-a8d5-cdfa7cd409d9)
 
 # Problems Faced & Solutions
 
